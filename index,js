@@ -16,10 +16,7 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(port, (error) => {
-  if (!error)
-    console.log("Server is Successfully Running on Port: ", port);
-  else
-    console.log("Error occurred, server can't start", error);
-}
-); 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.warn(`App listening on http://localhost:${PORT}`);
+});
