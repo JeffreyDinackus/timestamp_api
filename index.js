@@ -16,8 +16,10 @@ app.get('/', (req, res) => {
 app.get(`/api/:DATE`, (req, res) => {
   res.status(200);
   let time = req.params.DATE;
-  console.log(time)
-  res.send({ "unix": time, "utc": date.toUTCString(time) });
+  console.log(time);
+  x = Date.UTC(time);
+  console.log(x);
+  res.send({ "unix": time, "utc": x.toUTCString() });
 });
 
 
